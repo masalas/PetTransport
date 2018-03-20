@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 /**
- *
+ * DAO de database
  * @author masalas
  */
 public class Database {
