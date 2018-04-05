@@ -15,9 +15,15 @@ public class Pet {
     
     private String nome;
     
-    private Raca raca;
+    private String raca;
     
     private String observacoes;
+    
+    private int idade;
+    
+    private int user_id;
+    
+    
 
     public int getId() {
         return id;
@@ -35,11 +41,11 @@ public class Pet {
         this.nome = nome;
     }
 
-    public Raca getRaca() {
+    public String getRaca() {
         return raca;
     }
 
-    public void setRaca(Raca raca) {
+    public void setRaca(String raca) {
         this.raca = raca;
     }
 
@@ -50,7 +56,21 @@ public class Pet {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
-    
-    
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
     
 }

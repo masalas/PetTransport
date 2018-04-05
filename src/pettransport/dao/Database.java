@@ -10,7 +10,6 @@ import java.sql.SQLException;
 
 import static java.lang.String.format;
 import java.sql.Connection;
-import java.sql.Statement;
 
 /**
  * DAO de database
@@ -18,28 +17,23 @@ import java.sql.Statement;
  */
 public class Database {
     
-    private final String HOST="localhost";
-    private final String DATABASE="PetTransport";
-    private final String PORT="5432";
-    private final String USER="postgres";
-    private final String PASSWORD = "123";
+    private static final String HOST="localhost";
+    private static final String DATABASE="PetTransport";
+    private static final String PORT="5432";
+    private static final String USER="postgres";
+    private static final String PASSWORD = "123";
     
     
-    private Connection c;
-    private Statement stmt;
+    private static Connection c;
 
-    public Database() throws SQLException{
-        try {
+    public static Connection getConnection() throws SQLException, ClassNotFoundException{
+        if(Database.c==null){
             Class.forName("org.postgresql.Driver");
-            String url = format("jdbc:postgresql://%s:%s/%s",HOST,PORT,DATABASE);
-            this.c = DriverManager.getConnection(url, USER, PASSWORD);
-            this.c.setAutoCommit(false) ;
-
-        } catch (ClassNotFoundException | SQLException e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.exit(0);
+            String url = format("jdbc:postgresql://%s:%s/%s",Database.HOST, Database.PORT, Database.DATABASE);
+            Database.c = DriverManager.getConnection(url, Database.USER, Database.PASSWORD);
+            Database.c.setAutoCommit(false) ;
         }
-        
+        return Database.c;
     }
     
     private void criaTabelas(){

@@ -13,7 +13,7 @@ public class PetTransport {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws Exception {
         new Database();
     }
     

@@ -5,8 +5,8 @@
  */
 package pettransport.controller.impl;
 
-import java.util.List;
 import pettransport.controller.ControllerPet;
+import pettransport.dao.PetDAO;
 import pettransport.models.Pet;
 
 /**
@@ -15,24 +15,31 @@ import pettransport.models.Pet;
  */
 public class ControllerPetImpl implements ControllerPet{
 
+    public PetDAO dao;
+    
+    public ControllerPetImpl(){
+        dao = new PetDAO();
+    }
+    
     @Override
-    public void addPet(Pet pet) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void adicionarPet(Pet pet) throws Exception{
+        this.dao.adicionarPet(pet);
+    }
+    
+    @Override
+    public void atualizarPet(Pet pet) throws Exception{
+        this.dao.atualizarPet(pet);
     }
 
     @Override
-    public void removePet(Pet pet) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deletarPet(Pet pet) throws Exception{
+        this.dao.deletarPet(pet);
+       
     }
 
     @Override
-    public Pet getPetById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Pet> getPetsByUserId(int user_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Pet getPetById(int id) throws Exception{
+       return this.dao.getPetById(id);
     }
     
 }

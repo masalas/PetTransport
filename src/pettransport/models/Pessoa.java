@@ -5,15 +5,18 @@
  */
 package pettransport.models;
 
+import java.util.List;
+
 /**
  *
  * @author masalas
  */
-public class Raca {
+public class Pessoa {
     
     private int id;
     private String nome;
-    private Porte porte;
+    private String telefone;
+    private Endereco endereco;
 
     public int getId() {
         return id;
@@ -31,20 +34,22 @@ public class Raca {
         this.nome = nome;
     }
 
-    public Porte getPorte() {
-        return porte;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setPorte(Porte porte) {
-        this.porte = porte;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
     
     
-            
-   public enum Porte{
-       PEQUENO,
-       MEDIO,
-       GRANDE
-   }
     
 }
