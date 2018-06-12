@@ -27,13 +27,14 @@ public class Database {
     private static Connection c;
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException{
-        if(Database.c==null){
+        /*if(Database.c==null){
             Class.forName("org.postgresql.Driver");
             String url = format("jdbc:postgresql://%s:%s/%s",Database.HOST, Database.PORT, Database.DATABASE);
             Database.c = DriverManager.getConnection(url, Database.USER, Database.PASSWORD);
             Database.c.setAutoCommit(false) ;
         }
-        return Database.c;
+        return Database.c;*/
+        return null;
     }
     
     private void criaTabelas(){

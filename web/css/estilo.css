@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.entrada{
+	margin: 25px 0px;
+}
+.esquerda{
+	float: left;
+}
+.direita{
+        float:right;
+}
+h1{
+        font-size: 36px;
+        border-bottom: 2px solid #bbb;
+        border-bottom-color: black;
+        padding-left: 50px;
+        color: black;
+}
+h3{
+	font-size: 36px;
+	border-bottom: 2px solid #bbb;
+}
+
+#logo_text{
+        border-bottom: 2px solid #bbb;
+	margin: 0px 0px;
+	color: white;
+	padding-left:50px;
+}
+#sub_logo_text{
+        border-bottom: 2px solid #bbb;
+	margin: 0px;
+	color: white;
+	padding-left:50px;
+}
+#logo{
+        margin-left: 85px;
+        border-radius: 20px;
+	background-color: #2c3e50;
+	width: 520px;
+        height: 100px;
+        
+}
+#sub_logo{
+	background-color: blue;
+	margin: 0px;
+}
+#background{
+        float: left;
+        margin: 60px;
+        margin-left: 100px;
+}
+#geral{
+        
+}
+#corpo_gerenciamento{
+        border-radius: 15px;
+        margin: 60px;
+        padding: 60px;
+        background-color: white;
+}
+#corpo_cadastro{
+        border-radius: 15px;
+        margin: 60px;
+        padding: 60px;
+        background-color: white;
+}
+#corpo_login{
+        border-radius: 25px;
+        float:right;
+	margin: 60px;
+        margin-left: 20px;
+        margin-right: 120px;
+	padding: 60px;
+	background-color: white;
+        height: 380px;
+}
+body{
+	font-family: 'Montserrat', sans-serif; 
+	background-color: gray;
+	margin: 0px;
+}
+header{
+    
+}
+.tabela{
+    border: 1px solid #bbb;
+}
+.tabela td{
+    padding: 1px 20px;
+    border: 1px solid #bbb
+    
+}
+.tabela th{
+    padding: 1px 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    background-color:#ecf0f1;
+}
+li a {
+    border-radius: 20px;
+    margin-left: 5px;
+    background-color: #ecf0f1;
+    float: right;
+    display:inline;
+    color: #000;
+    padding: 10px 10px;
+    text-decoration: none;
+    border: none;
+}
+li a:hover {
+    text-decoration: none;
+    display: inline;
+    list-style-type: none;
+    background-color: #555;
+    color: #2c3e50;
+}
+#selectedit{
+    margin-right: 180px;
+    float: right;
+    
+}
+h4{
+    font-size: 18px;
+    border-bottom: 2px solid #bbb;
+}
+
+#btn_update{
+    display: none;
+}
+
+#motoristaEdit{
+    display: none;
+}
+
+.ativo{
+    background-color: darkgrey;
+}
