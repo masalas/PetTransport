@@ -13,12 +13,9 @@
 		</header>
 		<div id="corpo_cadastro">
 			<h3>Faça seu Cadastro!</h3>
-                        <ul>
-                       <!-- <li><a href="/Pettransport/cadastro">Cliente</a></li> 
-                       <li><a href="/Pettransport/cadastromotorista">Motorista</a></li> -->
-                        </ul>
 
 			<form id="meuForm" method="post">
+                            <input id="acao" name="acao" value="add">
                             <div id="selectedit">
                                 <h4>Selecione um Motorista.</h4>
                                 <select id="motoSelecionado">

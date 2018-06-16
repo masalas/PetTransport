@@ -21,6 +21,7 @@ motoSele.onchange = function(){
         document.getElementById("meuForm").reset();
         $("#btn_enviar").show();
         $("#btn_update").hide();
+        $("#acao").val("add");
     }
     else{
         $.get("https://steveown.github.io/pizzariajson/motoristas.json", function( data ) {
@@ -29,6 +30,7 @@ motoSele.onchange = function(){
         });
         $("#btn_enviar").hide();
         $("#btn_update").show();
+        $("#acao").val("atualizar");
     }
     
 };

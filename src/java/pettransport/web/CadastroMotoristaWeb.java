@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pettransport.controller.ControllerSessao;
 import pettransport.controller.impl.ControllerSessaoImpl;
+import pettransport.facade.MotoristaFacade;
 
 /**
  *
@@ -22,10 +23,12 @@ import pettransport.controller.impl.ControllerSessaoImpl;
 @WebServlet("/cadastromotorista")
 public class CadastroMotoristaWeb extends HttpServlet {
     
-    ControllerSessao controllerSessao;
+    private ControllerSessao controllerSessao;
+    private MotoristaFacade facade;
     
     public CadastroMotoristaWeb(){
         this.controllerSessao = new ControllerSessaoImpl();
+        this.facade = new MotoristaFacade();
     }
     
     @Override
@@ -45,11 +48,18 @@ public class CadastroMotoristaWeb extends HttpServlet {
             this.controllerSessao.redirectLogin(resp);
         }
         else{
-            for(String chave : req.getParameterMap().keySet()){
-                System.out.print(chave+": ");
-                System.out.println(req.getParameter(chave));
+            switch(req.getParameter("acao")){
+                case "add" : 
+                    this.facade.adicionarMotoristaByRequest(req); 
+                    break;
+                case "atualizar":
+                    break;
+                case "del":
+                    break;
+                case "motoristas":
+                    break;
             }
-        
+            
             this.doGet(req, resp);
         }
     }

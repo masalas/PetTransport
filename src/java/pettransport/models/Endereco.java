@@ -5,19 +5,39 @@
  */
 package pettransport.models;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author masalas
  */
-public class Endereco {
+@Entity
+@Table(name="endereco")
+public class Endereco implements Serializable{
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
+    @Column
     private String rua;
+    @Column
     private String numero;
+    @Column
     private String complemento;
+    @Column
     private String bairro;
+    @Column
     private String cep;
+    @Column
     private String ponto_referencia;
+    @Column
     private String cidade;
+    @Column
     private String estado;
     
     

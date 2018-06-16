@@ -5,22 +5,78 @@
  */
 package pettransport.models;
 
-import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author masalas
  */
-public class Cliente extends Pessoa{
+@Entity
+@Table(name="cliente")
+public class Cliente {
     
-    private List<Pet> pets;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;
     
-    public List<Pet> getPets() {
-        return pets;
+    @Column
+    private String nome;
+    
+    @Column
+    private String telefone;
+    
+    @OneToOne(cascade= CascadeType.ALL)
+    @JoinColumn
+    private Endereco endereco;
+    
+    @Column
+    private String email;
+    
+    public int getId() {
+        return id;
     }
 
-    public void setPets(List<Pet> pets) {
-        this.pets = pets;
+    public void setId(int id) {
+        this.id = id;
     }
-    
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

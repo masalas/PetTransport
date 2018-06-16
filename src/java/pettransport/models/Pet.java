@@ -5,22 +5,39 @@
  */
 package pettransport.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 /**
  *
  * @author masalas
  */
-public class Pet {
-    
+@Entity
+@Table(name="pet")
+public class Pet{
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     
+    @Column
     private String nome;
     
+    @Column
     private String raca;
     
+    @Column
     private String observacoes;
     
+    @Column
     private int idade;
-    
+
+    @Transient
     private int user_id;
     
     

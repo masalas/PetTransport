@@ -6,7 +6,8 @@
 package pettransport.controller.impl;
 
 import pettransport.controller.ControllerPet;
-import pettransport.dao.PetDAO;
+import pettransport.dao.DAO;
+import pettransport.dao.GenericDAO;
 import pettransport.models.Pet;
 
 /**
@@ -15,31 +16,31 @@ import pettransport.models.Pet;
  */
 public class ControllerPetImpl implements ControllerPet{
 
-    public PetDAO dao;
+    private DAO dao;
     
     public ControllerPetImpl(){
-        dao = new PetDAO();
+        this.dao = new GenericDAO();
     }
     
     @Override
     public void adicionarPet(Pet pet) throws Exception{
-        this.dao.adicionarPet(pet);
+        this.dao.adicionarEntidade(pet);
     }
     
     @Override
     public void atualizarPet(Pet pet) throws Exception{
-        this.dao.atualizarPet(pet);
+        this.dao.atualizarEntidade(pet);
     }
 
     @Override
     public void deletarPet(Pet pet) throws Exception{
-        this.dao.deletarPet(pet);
+        this.dao.deletarEntidade(pet);
        
     }
 
     @Override
     public Pet getPetById(int id) throws Exception{
-       return this.dao.getPetById(id);
+       return (Pet) this.dao.findById(Pet.class, id);
     }
     
 }

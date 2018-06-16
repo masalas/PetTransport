@@ -3,19 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/web/CadastroPetsWeb.java</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/css/estilo.css</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/WEB-INF/pages/cadastro_pets.jsp</file>
+            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/dao/DAO.java</file>
+            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/models/Motorista.java</file>
             <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/models/Cliente.java</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/WEB-INF/pages/login.jsp</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/WEB-INF/pages/menu.jsp</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/web/CadastroMotoristaWeb.java</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/WEB-INF/pages/cadastro_motorista.jsp</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/WEB-INF/pages/gerenciamento.jsp</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/dao/PessoaDAO.java</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/js/motorista.js</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/web/js/cep.js</file>
-            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/controller/impl/ControllerPetImpl.java</file>
+            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/models/Endereco.java</file>
+            <file>file:/home/masalas/NetBeansProjects/Pettransport/src/java/pettransport/models/Pet.java</file>
         </group>
     </open-files>
 </project-private>
