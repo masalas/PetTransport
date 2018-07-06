@@ -6,6 +6,8 @@
 package pettransport.dao;
 
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 /**
  *
  * @author masalas
@@ -20,4 +22,10 @@ public interface DAO {
    public Object findById(Class<?> clazz, int id);
    
     public List<Object> findAll(Class<?> clazz);
+    
+    public List<Object> findByQuery(Query query);
+    
+    public Object findSingleByQuery(Query query);
+    
+    public EntityManager getEm();
 }

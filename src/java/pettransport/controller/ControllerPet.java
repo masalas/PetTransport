@@ -14,13 +14,15 @@ import pettransport.models.Pet;
  */
 public interface ControllerPet {
     
-    public void adicionarPet(Pet pet) throws Exception;
+    public void adicionarPet(Pet pet);
     
     public void atualizarPet(Pet pet) throws Exception;
     
     public void deletarPet(Pet pet) throws Exception;
     
-    public Pet getPetById(int id) throws Exception;
+    public Pet getPetById(int id);
+    
+    public List<Pet> getTodosPets();
     
 }
 

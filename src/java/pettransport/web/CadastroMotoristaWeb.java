@@ -5,6 +5,7 @@
  */
 package pettransport.web;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -51,16 +52,20 @@ public class CadastroMotoristaWeb extends HttpServlet {
             switch(req.getParameter("acao")){
                 case "add" : 
                     this.facade.adicionarMotoristaByRequest(req); 
+                    this.doGet(req, resp);
                     break;
                 case "atualizar":
                     break;
                 case "del":
                     break;
                 case "motoristas":
+                    String json = new Gson().toJson(this.facade.getAll());
+                    resp.setContentType("application/json");
+                    resp.setCharacterEncoding("UTF-8");
+                    resp.getWriter().write(json);
                     break;
             }
             
-            this.doGet(req, resp);
         }
     }
 }

@@ -60,4 +60,19 @@ public class GenericDAO implements DAO{
                String.format("SELECT e FROM %s e", clazz.getName()));
        return q.getResultList();
     }
+
+    @Override
+    public List<Object> findByQuery(Query query) {
+        return query.getResultList();
+    }
+    
+    @Override
+    public Object findSingleByQuery(Query query) {
+        return query.getSingleResult();
+    }
+
+    @Override
+    public EntityManager getEm() {
+        return GenericDAO.entityManager;
+    }
 }

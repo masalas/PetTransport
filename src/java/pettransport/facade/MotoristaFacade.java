@@ -5,6 +5,7 @@
  */
 package pettransport.facade;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import pettransport.controller.ControllerMotorista;
 import pettransport.controller.impl.ControllerMotoristaImpl;
@@ -28,6 +29,10 @@ public class MotoristaFacade {
         motorista.setEmail(req.getParameter("email"));
         motorista.setTelefone(req.getParameter("telefone"));
         this.controllerMotorista.adicionarMotorista(motorista);
+    }
+    
+    public List<Motorista> getAll(){
+        return this.controllerMotorista.buscarTodos();
     }
     
     

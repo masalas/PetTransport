@@ -15,7 +15,7 @@
 			<h3>Faça seu Cadastro!</h3>
 
 			<form id="meuForm" method="post">
-                            <input id="acao" name="acao" value="add">
+                            <input style="display: none;" id="acao" name="acao" value="add">
                             <div id="selectedit">
                                 <h4>Selecione um Motorista.</h4>
                                 <select id="motoSelecionado">

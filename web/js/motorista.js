@@ -3,14 +3,15 @@
  */
 
 window.onload = function(){
-    $.get("https://steveown.github.io/pizzariajson/motoristas.json", function( data ) {
-        var motorista = JSON.parse(JSON.stringify(data));
-        for(i=0; i<motorista.length; i+=1){
-            var id=motorista[i]["id"];
-            var nome = motorista[i]["nome"];
+    $.post("cadastromotorista", {"acao": "motoristas"})
+        .done(function( data ) {
+            var motorista = JSON.parse(JSON.stringify(data));
+            for(i=0; i<motorista.length; i+=1){
+                var id=motorista[i]["id"];
+                var nome = motorista[i]["nome"];
             
-            $("#motoSelecionado").append("<option value='"+id+"'>"+nome+"</option> ");
-        }
+                $("#motoSelecionado").append("<option value='"+id+"'>"+nome+"</option> ");
+            }
     });
 };
 
@@ -24,9 +25,11 @@ motoSele.onchange = function(){
         $("#acao").val("add");
     }
     else{
-        $.get("https://steveown.github.io/pizzariajson/motoristas.json", function( data ) {
-            var motorista = getMotoristaById(id, JSON.parse(JSON.stringify(data)));
-            preencheCampos(motorista);
+        $.post("cadastromotorista", {"acao": "motoristas"})
+            .done(function( data ) {
+                alert(JSON.stringify(data));
+                var motorista = getMotoristaById(id, JSON.parse(JSON.stringify(data)));
+                preencheCampos(motorista);
         });
         $("#btn_enviar").hide();
         $("#btn_update").show();
@@ -37,7 +40,7 @@ motoSele.onchange = function(){
 
 function getMotoristaById(id, data){
     for(i=0; i<data.length; i+=1){
-        if (id === data[i]["id"]){
+        if (parseInt(id) === data[i]["id"]){
             return data[i];
         }
     }
